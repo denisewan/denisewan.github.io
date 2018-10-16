@@ -1,0 +1,87 @@
+
+.thumbnail {
+    width: 69px;
+}
+
+p:before {
+    content: url(https://www.shareicon.net/data/32x32/2015/12/14/207857_face_300x300.png)
+}
+
+a:before {
+    content: '[this is a link]'
+}
+a:after {
+    content: url(https://cdn2.iconfinder.com/data/icons/aspneticons_v1.0_Nov2006/link_16x16.gif)
+}
+
+.menuitem {
+    list-style: none;
+    font-size: 2em;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    transition-property: all;
+    transition-duration: 500ms;
+    transition-timing-function: linear;
+}
+.menuitem:hover {
+    background-color: lightgray;
+    border-bottom: 2px solid black;
+}
+
+.display-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.display-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.bottom-space-30px {
+    margin-bottom: 30px;
+
+}
+
+.solid-box {
+    border: 1px black solid;
+}
+
+.horizontal {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.horizontal-2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+}
+.box-100 {
+    width: 100px;
+    height: 100px;
+    transition-property: all;
+    transition-duration: 300ms;
+    transition-timing-function: linear;
+}
+.box-100:hover {
+    border-radius: 50px;
+}
+
+.color-blue {
+    border: 2px solid darkblue;
+    background: lightblue;
+}
+.color-blue:hover {
+    background: blueviolet;
+}
+
+.color-red {
+    border: 2px solid darkred;
+    background-color: pink;
+}
