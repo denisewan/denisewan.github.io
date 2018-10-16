@@ -26,6 +26,64 @@
     color: white;
 }
 
+section.image ul {
+    overflow: hidden;
+    clear: both;
+    padding: 0;
+    margin: 5% 0 0 0;
+    width: 100%;
+}
+section.image li {
+    display: block;
+    list-style-type: none;
+    list-style-image: none;
+    text-align: center;
+    margin-bottom: 100px;
+    position: relative;
+}
+section.image li img {
+    filter: grayscale(1);
+    -webkit-filter: grayscale(1) brightness(0.9);
+    -moz-filter: grayscale(1) brightness(0.9);
+    -o-filter: grayscale(1) brightness(0.9);
+    -ms-filter: grayscale(1) brightness(0.9);
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    max-width: 100%;
+    height: auto;
+}
+section.image li img:hover {
+    filter: grayscale(0.1) brightness(1);
+    -webkit-filter: grayscale(0.1) brightness(1);
+    -moz-filter: grayscale(0.1) brightness(1);
+    -o-filter: grayscale(0.1) brightness(1);
+    -ms-filter: grayscale(0.1) brightness(1);
+}
+section.image li span.caption {
+    display: none;
+    position: absolute;
+    text-align: center;
+    margin-top: 18px;
+    width: 100%;
+    height: auto;
+}
+section.image li:hover span.caption {
+    display: block;
+}
+section.image li span.caption.label {
+    display: block;
+    font-size: 23px;
+    margin-top: 23px;
+    font-family:'Phenotype S', times;
+}
+section.image li:hover span.caption.label {
+    display: none;
+}
+
 .promo-banner {
     width: 100%;
     max-width: 1200px;
