@@ -1,0 +1,14 @@
+h1{
+    color: blue; 
+    text-decoration: underline;
+    font-family: monospace;
+    font-size: 3em;
+}
+
+p{
+    color: red; 
+    text-decoration: underline;
+    font-family: monospace;
+    font-size: 1.2em;
+    border: 1px solid yellowgreen;
+}
