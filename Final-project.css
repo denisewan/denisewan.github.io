@@ -31,3 +31,9 @@
     max-width: 1200px;
     height: auto;
 }
+
+.thumbnail {
+    width: 100%;
+    max-width: 300 px;
+    height: auto;
+}
