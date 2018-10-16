@@ -11,6 +11,12 @@ h1{
     font-size: 3em;
 }
 
+.image{
+    width: 64px;
+    height: 64px;
+    border-radius: 32px;
+}
+
 p{
     color: red; 
     text-decoration: underline;
