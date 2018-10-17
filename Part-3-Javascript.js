@@ -6,8 +6,7 @@ function conDition(){
 	num1 = prompt("Please enter a number from 1 to 10"); 	
 
 	if(num1 >= 1 && num1 <= 10){
-        alert("You read my memory");
-        num1 = 0; 
+        alert("You read my memory"); 
     	outNum(); 
 
 	}else if(num1 < 1){
