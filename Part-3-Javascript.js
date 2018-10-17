@@ -25,14 +25,3 @@ function conDition(){
 		conDition();
 	}
 }
-
-function outNum(){
-	do
-	{
-    	document.write(num1 + "<br>");
-    	num1++;
-	}while (num1 <= 10);
-
-	document.write("you read my memory");	
-	return true; 
-}
