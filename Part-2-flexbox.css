@@ -7,10 +7,10 @@ p:before {
     content: url(https://www.shareicon.net/data/32x32/2015/12/14/207857_face_300x300.png)
 }
 
-a:before {
+a[href]:before {
     content: '[this is a link]'
 }
-a:after {
+a[href]:after {
     content: url(https://cdn2.iconfinder.com/data/icons/aspneticons_v1.0_Nov2006/link_16x16.gif)
 }
 

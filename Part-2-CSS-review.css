@@ -1,0 +1,24 @@
+/* element selector */
+h1 {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    transition-property: text-shadow;
+    transition-duration: 500ms;
+    transition-timing-function: linear;
+}
+h1:hover {
+    text-shadow: 8px 8px 5px gray;
+}
+
+/* class selector - starts with . */
+.important {
+    text-decoration: underline;
+}
+
+/* id selector - starts with # */
+#me {
+    color: blue;
+}
+
+#me:before {
+    content: url(https://www.shareicon.net/data/32x32/2015/12/14/207857_face_300x300.png);
+}
