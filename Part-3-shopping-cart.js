@@ -10,9 +10,5 @@ while (item != "done") {
 }
 fruits.pop();
 
-var msg = `The contents of your cart are: ${fruits}`;
-console.log(msg);
-
-
-//contents of your carts are
+console.log('The contents of your cart are', fruits)
 
