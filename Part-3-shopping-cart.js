@@ -1,77 +1,83 @@
-/* Set rates + misc */
-var taxRate = 0.05;
-var shippingRate = 15.00; 
-var fadeTime = 300;
-
-
-/* Assign actions */
-$('.product-quantity input').change( function() {
-  updateQuantity(this);
-});
-
-$('.product-removal button').click( function() {
-  removeItem(this);
-});
-
-
-/* Recalculate cart */
-function recalculateCart()
-{
-  var subtotal = 0;
-  
-  /* Sum up row totals */
-  $('.product').each(function () {
-    subtotal += parseFloat($(this).children('.product-line-price').text());
+$('.terms button').on('click', function() {
+    $(".review").hide();
+    $(".agreed").show();
+    $(".complete button").removeAttr("disabled");
   });
   
-  /* Calculate totals */
-  var tax = subtotal * taxRate;
-  var shipping = (subtotal > 0 ? shippingRate : 0);
-  var total = subtotal + tax + shipping;
-  
-  /* Update totals display */
-  $('.totals-value').fadeOut(fadeTime, function() {
-    $('#cart-subtotal').html(subtotal.toFixed(2));
-    $('#cart-tax').html(tax.toFixed(2));
-    $('#cart-shipping').html(shipping.toFixed(2));
-    $('#cart-total').html(total.toFixed(2));
-    if(total == 0){
-      $('.checkout').fadeOut(fadeTime);
-    }else{
-      $('.checkout').fadeIn(fadeTime);
-    }
-    $('.totals-value').fadeIn(fadeTime);
+  $('.agreed').on('click', function() {
+    $(".review").show();
+    $(".agreed").hide();
+    $(".complete button").attr("disabled","disabled");
   });
-}
-
-
-/* Update quantity */
-function updateQuantity(quantityInput)
-{
-  /* Calculate line price */
-  var productRow = $(quantityInput).parent().parent();
-  var price = parseFloat(productRow.children('.product-price').text());
-  var quantity = $(quantityInput).val();
-  var linePrice = price * quantity;
   
-  /* Update line price display and recalc cart totals */
-  productRow.children('.product-line-price').each(function () {
-    $(this).fadeOut(fadeTime, function() {
-      $(this).text(linePrice.toFixed(2));
-      recalculateCart();
-      $(this).fadeIn(fadeTime);
+  $('button.remove').on('click', function(){
+    $(this).parent().velocity({
+      translateX: "-800px",
+      opacity: 0
+    },{
+      duration: 500,
+      complete: function(elem) {
+        $(elem).addClass("deleted");
+      },
+      easing: [ 0.65, -0.02, 0.72, 0.29 ] 
     });
-  });  
-}
-
-
-/* Remove item from cart */
-function removeItem(removeButton)
-{
-  /* Remove row from DOM and recalc cart total */
-  var productRow = $(removeButton).parent().parent();
-  productRow.slideUp(fadeTime, function() {
-    productRow.remove();
-    recalculateCart();
   });
-}
+  
+  $('#changePrices').on('click', function() {
+    var $strike = $('<span class="strike"></span>');
+    var $price = $('.price').first();
+    var oldPrice = $price.text();
+    var $oldPrice = $('<span class="old"></span>');
+    var newPrice = '$0.99';
+    var $newPrice = $('<span class="new">'+ newPrice +'</span>');
+    // add span.strike
+    $price.prepend($strike);
+    // wrap the span.old around the current price
+    $price.wrapInner($oldPrice);
+    // For some reason wrapInner doesn't maintain the DOM relationship, so re-assign it back
+    $oldPrice = $price.find(".old");
+    $price.append($newPrice);
+  
+    // draw a slash through the price, and remove the slash
+    $strike.velocity({
+      width: "105%"
+    },{
+      duration: 500,
+      easing: [ 1, 0, 1, 1 ]
+    });
+    
+    // float the old price up
+    $oldPrice.velocity({
+      translateY: "-1.2em",
+      opacity: 0
+    },{
+      delay: 500,
+      duration: 800,
+      complete: function(elem) {
+        $(elem).remove();
+      },
+      easing: [ 0, 1, 1, 1 ]
+    });
+    
+    // Fade in the new price, then unwrap it to finish the animation
+    $newPrice.velocity({ 
+      opacity: 1
+    }, {
+      delay: 500, 
+      duration: 250,
+      easing: "linear",
+      complete: function(elem) {
+       $(elem).contents().unwrap();
+      }
+    });
+  });
+  
+  $('#undelete').on('click', function(){
+    $('.product.ux-card').each( function( index, el ) {
+      if ( $(el).hasClass('deleted') ) {
+        $(el).velocity('reverse').removeClass('deleted');
+      } else {
+        // Do nothing
+      }
+    });;
+  });
