@@ -1,27 +1,18 @@
-var num1;
-conDition(); 
+//var toGuess = 6;
+var toGuess = Math.floor(Math.random() * 10) + 1;
+console.log('toGuess = ', toGuess);
 
-function conDition(){
-	
-	num1 = prompt("Please enter a number from 1 to 10"); 	
+//read in a number
+var userInput = prompt('Please enter a number between 1 - 10');
+//convert string to number
+var usersGuess = parseInt(userInput);
 
-	if(num1 >= 1 && num1 <= 10){
-        alert("You read my memory"); 
-    	outNum(); 
+if (toGuess == usersGuess) {
+    console.info('You read my memory');
 
-	}else if(num1 < 1){
-		alert("The number is too low for this function."); 	
-		num1 = 0; 
-		conDition();	
+} else if (toGuess > usersGuess) {
+    console.warn('Your guess is lower than my number');
 
-	}else if(num1 > 10){
-		alert("The number is too high for this function.");
-		num1 = 0; 
-		conDition();
-		
-	}else{
-		alert("That is not a number!"); 
-		num1 = 0;
-		conDition();
-	}
+} else {
+    console.warn('Your guess is higher than my number');
 }
