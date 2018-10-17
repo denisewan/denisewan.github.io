@@ -10,4 +10,4 @@ while (item != "done") {
 }   
 fruits.pop();
 
-console.log('The contents of your cart are', fruits)
+console.log('The contents of your cart are' fruits)
