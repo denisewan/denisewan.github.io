@@ -31,8 +31,8 @@ function outNum(){
 	{
     	document.write(num1 + "<br>");
     	num1++;
-	}while (num1 <= 300);
+	}while (num1 <= 10);
 
-	document.write("############################<br>");	
+	document.write("you read my memory");	
 	return true; 
 }
