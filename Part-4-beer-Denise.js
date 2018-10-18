@@ -1,19 +1,9 @@
-var bodyElem = document.querySelector('body');
+var counter=0,
+    $bellNotificator = $('#header_bell_notificator'),
+    $bellNotificatorImg = $bellNotificator.find('img');
 
-var beer = 99;
-
-while (beer >= 1) {
-    var bottles = mkBottles(beer);
-    document.body.appendChild(bottles);
-    beer -= 1;
-}
-
-var line1 = function(bottles) {
-    return (`${bottles}`);
-}
-
-while (beer >= 1) {
-    console.log( line1(beer) )
-    console.log('\n')
-    beer -= 1;
-}
+$( "#kick_button" ).click(function() {
+    counter++;
+    $bellNotificator.attr('data-counter', counter);
+    $bellNotificatorImg.removeClass("show_notif");
+});
