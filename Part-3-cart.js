@@ -1,17 +1,28 @@
-var base = parseInt(prompt('Enter your multiplication base') )
+//Get inputs
+var MAXITEMS = 3;
+//const MAXITEMS = 3;
+var cart = [];
+var item = "";
 
-var msg1 = 'Your multiplcation base ' + base;
-//var msg = `Your multiplicatoin base is ${base}`;
-console.log(msg1);
+//cond 1 cart.length == 5
+//cond 2 item == 'done'
 
-var count = 0;
+//cond 1 and cond 2
+while ((cart.length < MAXITEMS) && (item != 'done')) {
+//while (item != "done") {
+    item = prompt('Add an item')
+    //if ((item != null) && (item != "") && (item != 'done')) {
+    if ((item != null) && (item != "")) {
+        cart.push(item);
+    } //if
+} //while
+if (item == 'done') {
+    cart.pop();
+}
 
-while (count < 12) {
-    count += 1; //count = count + 1;
-    var result = base * count;
-    //String concatenation
-    //console.log(base + ' x ' + count + ' = ' + result)
-    //String interpolation
-    console.log(`>>> ${base} x ${count} = ${result}`);
-    //console.log(base, " x ", count, " = ", result);
+console.log('The contents of your cart are:')
+var counter = 0;
+while (counter < cart.length) {
+    console.info(`${counter + 1}. ${cart[counter]}`);
+    counter += 1;
 }
