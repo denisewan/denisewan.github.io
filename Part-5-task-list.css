@@ -2,10 +2,10 @@
     border-left: 5px solid red;
 }
 .priority-medium {
-    border-left: 5px solid blue;
+    border-left: 5px solid orange;
 }
 .priority-low {
-    border-left: 5px solid ghostwhite;
+    border-left: 5px solid green;
 }
 
 .container {
