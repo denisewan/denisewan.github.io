@@ -1,7 +1,7 @@
 
 var mkBottle = function() {
     var imgElem = document.createElement('img');
-    imgElem.src = 'images/beer.png';
+    imgElem.src = 'images/1819-PD-Part-4-beer-18Oct18.png';
     return (imgElem);
 }
 
@@ -31,6 +31,18 @@ var bodyElem = document.querySelector('body');
 //document.body.appendChild(title);
 
 var beer = 99;
+
+//add an event listener to button #anotherLine
+var btn = document.querySelector('#anotherLine');
+btn.addEventListener(
+    'click',
+    function() {
+        //console.log('>>> clicked: ', beer);
+        document.body.appendChild(mkBottles(beer));
+        beer -= 1;
+    }
+)
+
 /*
 while (beer >= 1) {
     var bottles = mkBottles(beer);
