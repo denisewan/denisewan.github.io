@@ -6,6 +6,14 @@ var mkList = function (taskName, dueDate, priority){
     liElem.textContent = `${taskName} - ${dueDate}`;
     // <li class="list-group"> a task - due date </li>
     liElem.classList.add('list-group-item');
+
+    // <li class="list-group-item priority-????"> a task - due date </li>
+    if (priority == 'high')
+        liElem.classList.add('priority-high');
+    else if (priority == 'medium')
+        liElem.classList.add('priority-medium')
+    else   
+        liElem.classList.add('priority-low')
     return (liElem)
 }
 
