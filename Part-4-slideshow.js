@@ -3,7 +3,7 @@ var nextBtn = document.querySelector('#nextBtn');
 var counter = 0;
 var updateSlide = function(slideNumber) {
     var img = document.querySelector('#slide');
-    img.src = `images/1819-Counter${slideNumber}.jpg`;
+    img.src = `images/1819-Counter-${slideNumber}.jpg`;
 }
 nextBtn.addEventListener(
     'click',  //event name
