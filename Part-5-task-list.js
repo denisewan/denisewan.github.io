@@ -19,7 +19,7 @@ addBtn.addEventListener(
 addBtn.addEventListener(
     'click',
     function(){
-        var duedateElem = document.querySelector('#priority')
+        var priorityElem = document.querySelector('#priority')
         console.log ('Priority: ', priorityElem.value)
     }
 )
