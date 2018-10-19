@@ -18,7 +18,10 @@
 <body>
         <div class="container">
 
-                <h1>My Little TODO List <i class="fas fa-list-ol red-list"></i></h1>
+                <h1 class="title-format">
+                    <span>My TODO List</span>
+                    <i class="fas fa-list-ol red-list"></i>
+                </h1>
     
                 <form>
     
@@ -28,12 +31,30 @@
                         <small class="form-text text-muted">Please enter your task name</small>
                     </div>
     
+                    <div class="form-group">
+                        <label for="due-date">Due</label>
+                        <input type="date" id="due-date" class="form-control" placeholder="Due date">
+                        <small class="form-text text-muted">When is this task due?</small>
+                    </div>
+    
+                    <div class="form-group">
+                        <label for="priority">Priority</label>
+    
+                        <select id="priority" class="form-control">
+                            <option value="high">High</option>
+                            <option value="medium">Medium</option>
+                            <option value="low">Low</option>
+                        </select>
+    
+                        <small class="form-text text-muted">Can I procrestinate?</small>
+                    </div>
+    
                     <div class="btn-group right-justify">
                         <button type="reset" class="btn btn-lg btn-warning">
                             <i class="fas fa-eraser"></i>
                             Clear
                         </button>
-                        <button type="button" class="btn btn-lg btn-success">
+                        <button type="button" id="addBtn" class="btn btn-lg btn-success">
                             <i class="fas fa-plus-circle"></i>
                             Add
                         </button>
@@ -41,9 +62,11 @@
     
                 </form>
     
+                <div class="list-group" id="todo-list">
+                </div>
+    
             </div>
     
-
     <script src="Part-5-task-list.js"></script>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
