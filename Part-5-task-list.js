@@ -28,6 +28,9 @@ addBtn.addEventListener(
         var todoElem = mkList(taskElem.value, duedateElem.value, priorityElem.value);
         var todoListElem = document.querySelector('#todo-list');
         todoListElem.appendChild(todoElem);
+        taskElem.value=null;
+        duedateElem.value=null;
+        priorityElem.value=medium;
 
     }
 )
